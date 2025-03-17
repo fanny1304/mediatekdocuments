@@ -22,6 +22,10 @@ namespace MediaTekDocuments.dal
         /// </summary>
         private static readonly string uriApi = "http://localhost/rest_mediatekdocuments/";
         /// <summary>
+        /// nom de connexion à la bdd
+        /// </summary>
+        private static readonly string connectionName = "MediaTekDocuments.Properties.Settings.mediatek86ConnectionString";
+        /// <summary>
         /// instance unique de la classe
         /// </summary>
         private static Access instance = null;
@@ -54,7 +58,7 @@ namespace MediaTekDocuments.dal
             String authenticationString;
             try
             {
-                authenticationString = "admin:adminpwd";
+                authenticationString = GetConnectionStringByName(connectionName);
                 api = ApiRest.GetInstance(uriApi, authenticationString);
             }
             catch (Exception e)
@@ -76,6 +80,21 @@ namespace MediaTekDocuments.dal
             }
             return instance;
         }
+
+        /// <summary>
+        /// Récupération de la chaîne de connexion
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        static string GetConnectionStringByName(string name)
+        {
+            string returnValue = null;
+            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings[name];
+            if (settings != null)
+                returnValue = settings.ConnectionString;
+            return returnValue;
+        }
+
 
         /// <summary>
         /// Retourne tous les genres à partir de la BDD
