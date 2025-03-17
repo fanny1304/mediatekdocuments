@@ -1,0 +1,9 @@
+﻿C:\Projets\mediatekdocuments\MediaTekDocumentsTests\dal\AccessTests.cs
+C:\Projets\mediatekdocuments\MediaTekDocumentsTests\Properties\AssemblyInfo.cs
+C:\Projets\mediatekdocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Projets\mediatekdocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Projets\mediatekdocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Projets\mediatekdocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Projets\mediatekdocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Projets\mediatekdocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Projets\mediatekdocuments\MediaTekDocumentsTests\packages.config

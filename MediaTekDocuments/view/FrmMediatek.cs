@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
 using System.IO;
+using System.Text;
 
 namespace MediaTekDocuments.view
 
@@ -42,15 +43,16 @@ namespace MediaTekDocuments.view
             if (this.service == "administratif" || this.service == "administrateur")
             {
                 List<Abonnement> lesAbonnementsEcheance = controller.GetAbonnementsEcheance();
-                if (lesAbonnementsEcheance.Count() != 0)
+                if (lesAbonnementsEcheance.Any())
                 {
-                    String liste = "Attention, les abonnements suivants se terminent dans moins de 30 jours ! \n \n ";
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Attention, les abonnements suivants se terminent dans moins de 30 jours ! \n ");
                     foreach (Abonnement unAbonnement in lesAbonnementsEcheance)
                     {
-                        String infoAbonnement = "Revue \"" + unAbonnement.Titre + "\" : " +
-                                                "expiration le " + unAbonnement.DateFinAbonnement.ToString("dd/MM/yyyy");
-                        liste += "• " + infoAbonnement + "\n";
+                        sb.AppendLine("• Revue \"" + unAbonnement.Titre + "\" : " +
+                                      "expiration le " + unAbonnement.DateFinAbonnement.ToString("dd/MM/yyyy"));
                     }
+                    string liste = sb.ToString();
                     MessageBox.Show(liste, "Alerte de fin d'abonnement", MessageBoxButtons.OK);
                 }
             }
@@ -675,8 +677,8 @@ namespace MediaTekDocuments.view
         /// <returns>true si le livre existe déjà</returns>
         private bool livreExiste(string idLivre)
         {
-            List<Livre> lesLivres = controller.GetAllLivres();
-            foreach (Livre unLivre in lesLivres)
+            List<Livre> livres = controller.GetAllLivres();
+            foreach (Livre unLivre in livres)
             {
                 if (unLivre.Id == idLivre)
                 {
@@ -1538,8 +1540,8 @@ namespace MediaTekDocuments.view
         /// <returns>true si le dvd existe déjà</returns>
         private bool dvdExiste(string idDvd)
         {
-            List<Dvd> lesDvd = controller.GetAllDvd();
-            foreach (Dvd unDvd in lesDvd)
+            List<Dvd> Dvds = controller.GetAllDvd();
+            foreach (Dvd unDvd in Dvds)
             {
                 if (unDvd.Id == idDvd)
                 {
@@ -2360,8 +2362,8 @@ namespace MediaTekDocuments.view
         /// <returns>true si la revue existe déjà</returns>
         private bool revueExiste(string idRevue)
         {
-            List<Revue> lesRevues = controller.GetAllRevues();
-            foreach (Revue uneRevue in lesRevues)
+            List<Revue> revues = controller.GetAllRevues();
+            foreach (Revue uneRevue in revues)
             {
                 if (uneRevue.Id == idRevue)
                 {
@@ -2951,8 +2953,8 @@ namespace MediaTekDocuments.view
         /// </summary>
         private void remplirCbxRechercheLivre()
         {
-            List<Livre> lesLivres = controller.GetAllLivres();
-            foreach(Livre unLivre in lesLivres)
+            List<Livre> livres = controller.GetAllLivres();
+            foreach(Livre unLivre in livres)
             {
                 cbxRechercheLivreCommande.Items.Add(unLivre.Id + " : " + unLivre.Titre);
             }
@@ -3381,8 +3383,8 @@ namespace MediaTekDocuments.view
         /// </summary>
         private void remplirCbxRechercheDvd()
         {
-            List<Dvd> lesDvd = controller.GetAllDvd();
-            foreach (Dvd unDvd in lesDvd)
+            List<Dvd> Dvds = controller.GetAllDvd();
+            foreach (Dvd unDvd in Dvds)
             {
                 cbxRechercheDvdCommande.Items.Add(unDvd.Id + " : " + unDvd.Titre);
             }
@@ -3807,8 +3809,8 @@ namespace MediaTekDocuments.view
         /// </summary>
         private void remplirCbxRechercheRevue()
         {
-            List<Revue> lesRevues = controller.GetAllRevues();
-            foreach(Revue uneRevue in lesRevues)
+            List<Revue> revues = controller.GetAllRevues();
+            foreach(Revue uneRevue in revues)
             {
                 cbxRechercheRevueCommande.Items.Add(uneRevue.Id + " : " + uneRevue.Titre);
             }
@@ -4090,9 +4092,9 @@ namespace MediaTekDocuments.view
         /// <returns>true si aucun exemplaire est rattaché à la commande de revue</returns>
         private bool verifExemplaireAbonnement (Abonnement abonnement)
         {
-            List<Exemplaire> lesExemplaires = controller.GetExemplairesRevue(abonnement.IdRevue);
+            List<Exemplaire> exemplaires = controller.GetExemplairesRevue(abonnement.IdRevue);
             bool verif = true;
-            foreach (Exemplaire unExemplaire in lesExemplaires)
+            foreach (Exemplaire unExemplaire in exemplaires)
             {
                 Console.WriteLine(abonnement.DateCommande + " " + abonnement.DateFinAbonnement + " " + unExemplaire.DateAchat);
                 if (controller.ParutionDansAbonnement(abonnement.DateCommande, abonnement.DateFinAbonnement, unExemplaire.DateAchat))
