@@ -16,6 +16,13 @@ namespace MediaTekDocuments.dal
     /// <summary>
     /// Classe d'accès aux données
     /// </summary>
+    internal class NamespaceDoc
+    {
+
+    }
+    /// <summary>
+    /// Classe d'accès aux données
+    /// </summary>
     public class Access
     {
         /// <summary>
@@ -91,8 +98,8 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Récupération de la chaîne de connexion
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name">nom de la chaîne de connexion</param>
+        /// <returns>chaîne de connection</returns>
         static string GetConnectionStringByName(string name)
         {
             string returnValue = null;
@@ -136,7 +143,7 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Retourne tous les documents enregistrés dans la BDD
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Liste d'objets Document</returns>
         public List<Document> GetAllDocuments()
         {
             List<Document> lesDoc = TraitementRecup<Document>(GET, "document", null);
@@ -186,7 +193,7 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Retourne tous les abonnements à partir de la BDD
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Liste d'objets Abonnement</returns>
         public List<Abonnement> GetAllAbonnements()
         {
             List<Abonnement> lesAbonnements = TraitementRecup<Abonnement>(GET, "abonnement", null);
@@ -206,7 +213,7 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Retourne tous les états à partir de la BDD
         /// </summary>
-        /// <returns>List d'objets etats</returns>
+        /// <returns>List d'objets Etat</returns>
         public List<Etat> GetAllEtats()
         {
             List<Etat> lesEtats = TraitementRecup<Etat>(GET, "etat", null);
@@ -216,7 +223,7 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Retourne les abonnements arrivant à échéance
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Liste d'objets Abonnement</returns>
         public List<Abonnement> GetAbonnementsEcheance()
         {
             List<Abonnement> lesAbonnementsEcheance = TraitementRecup<Abonnement>(GET, "abonnementecheance", null);
@@ -413,7 +420,7 @@ namespace MediaTekDocuments.dal
         /// <param name="Isbn">isbn du livre</param>
         /// <param name="auteur">auteur du livre</param>
         /// <param name="collection">collection du livre</param>
-        /// <returns></returns>
+        /// <returns>true si la modification a pu se faire</returns>
         public bool ModifierLivre(string id, string Isbn, string auteur, string collection)
         {
             String jsonLivre = "{ \"id\" : \"" + id + "\", " +
@@ -643,7 +650,8 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Modification du suivi d'une commande dans la bdd
         /// </summary>
-        /// <param name="id">id du nouveau suivi</param>
+        /// <param name="id">id de la commande</param>
+        /// <param name="idSuivi">id du nouveau suivi</param>
         /// <returns>true si la modification a pu se faire</returns>
         public bool ModifierSuiviCommandeDocument(string id, string idSuivi)
         {
@@ -682,10 +690,12 @@ namespace MediaTekDocuments.dal
         }
 
         /// <summary>
-        /// Ecriture d'un abonnement d'une revue en base de données
+        /// Ecriture d'un abonnement de revue en base de données
         /// </summary>
-        /// <param name="abonnement">Abonnement à insérer</param>
-        /// <returns>true si l'insertion a pu se faire</returns>
+        /// <param name="id">id de l'abonnement</param>
+        /// <param name="dateFinAbonnement">date de fin d'abonnement</param>
+        /// <param name="idRevue">id de la revue</param>
+        /// <returns>true si la création a pu se faire</returns>
         public bool CreerAbonnementRevue(string id, DateTime dateFinAbonnement, string idRevue)
         {
             String jsonDateFinAbonnement = JsonConvert.SerializeObject(dateFinAbonnement, new CustomDateTimeConverter());
@@ -740,9 +750,8 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Modification de l'état d'un exemplaire d'un document dans la bdd
         /// </summary>
-        /// <param name="numero">numero du document</param>
-        /// <param name="idEtat">id de l'état à modifier</param>
-        /// <returns>true si la modification a puse faire</returns>
+        /// <param name="exemplaire">Objet exemplaire à modifier</param>
+        /// <returns>true si la modification a pu se faire</returns>
         public bool ModifierEtatExemplaireDocument(Exemplaire exemplaire)
         {
             String jsonEtatExemplaire = JsonConvert.SerializeObject(exemplaire, new CustomDateTimeConverter());
