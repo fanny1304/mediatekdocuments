@@ -14,6 +14,11 @@ namespace MediaTekDocuments.model
         public string Id { get; set; }
         public string Libelle { get; set; }
 
+        /// <summary>
+        /// Constructeur de la classe Suivi
+        /// </summary>
+        /// <param name="id">id du suivi</param>
+        /// <param name="libelle">libellé du suivi</param>
         public Suivi(string id, string libelle)
         {
             this.Id = id;

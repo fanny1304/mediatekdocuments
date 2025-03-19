@@ -32,6 +32,10 @@ namespace MediaTekDocuments.controller
             return access.GetAllGenres();
         }
 
+        /// <summary>
+        /// getter sur les documents
+        /// </summary>
+        /// <returns></returns>
         public List<Document> GetAllDocuments()
         {
             return access.GetAllDocuments();
