@@ -150,7 +150,8 @@
     <EmbeddedResource Include="view\FrmMediatek.resx">
       <DependentUpon>FrmMediatek.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Documentation\Documentation.chm" />
+    <None Include="documentation\Documentation.chm" />
+    <None Include="installeur\MediatekDocuments-setup.msi" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -166,7 +167,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Documentation\MediaTekDocuments.xml" />
+    <Content Include="documentation\MediaTekDocuments.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
