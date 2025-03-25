@@ -8,14 +8,14 @@ Dans le readme de ce dépôt seront uniquement présentées les fonctionnalités
 
 ## Présentation
 Avant la réalisation de cet atelier, l'application était partiellement codée, et contenait les fonctionnalités suivantes : <br>
- . Recherches et affichage d'informations sur les documents de la médiathèques (livres, DVD, revues)<br>
- . Réception de nouveaux numéros de revues <br><br>
+- Recherches et affichage d'informations sur les documents de la médiathèques (livres, DVD, revues)<br>
+- Réception de nouveaux numéros de revues <br><br>
 
 Lors de cet atelier, les fonctionnalités suivantes ont été ajoutées :<br>
- . Gestion des documents (livres, DVD, revues) : ajout, modification (excepté l'identifiant), et suppression (uniquement s'il ny a pas de commandes et d'exemplaires). <br>
- . Gestion des commandes : commandes de livres et DVD (commander un ou plusieurs exemplaires, gérer le stade de la commande : "en cours", "relancée", "réglée", afficher la liste des commandes et leur stade, générer les exemplaires lors de la livraison), commandes de revues (correspond à un abonnement ou un renouvellement d'abonnement) <br>
- . Gestion du suivi des états des documents physiques, donc des exemplaires ("neuf", "usagé", "détérioré", "inutilisable").<br>
- . Limitation des accès : l'administrateur et le personnel du service administratif ont accès à toutes les fonctionnalités, les employés du service "prêts" n'ont accès qu'aux fonctionalités de consultation des documents, les employés du service "culture" (organisation des évènements) ne se ont pas censés manipuler cette application <br><br>
+- Gestion des documents (livres, DVD, revues) : ajout, modification (excepté l'identifiant), et suppression (uniquement s'il ny a pas de commandes et d'exemplaires). <br>
+- Gestion des commandes : commandes de livres et DVD (commander un ou plusieurs exemplaires, gérer le stade de la commande : "en cours", "relancée", "réglée", afficher la liste des commandes et leur stade, générer les exemplaires lors de la livraison), commandes de revues (correspond à un abonnement ou un renouvellement d'abonnement) <br>
+- Gestion du suivi des états des documents physiques, donc des exemplaires ("neuf", "usagé", "détérioré", "inutilisable").<br>
+- Limitation des accès : l'administrateur et le personnel du service administratif ont accès à toutes les fonctionnalités, les employés du service "prêts" n'ont accès qu'aux fonctionalités de consultation des documents, les employés du service "culture" (organisation des évènements) ne se ont pas censés manipuler cette application <br><br>
 
 L'application ne comporte qu'une seule fenêtre, divisée en plusieurs onglets. <br>
 
@@ -27,16 +27,16 @@ Les fonctionnalités ajoutées au niveau du code sont les suivantes :<br>
 #### Ajout d'un livre
 Il est possible, en vidant automatiquement les informations détaillées sur un document, d'ajouter un nouveau livre. On peut ainsi renseigner l'ensemble des informations suivantes : numéro de document, code ISBN, titre, auteur, collection, genre, public, rayon, chemin de l'image. Un combo automatiquement créé et rempli, permet la sélection du genre, public et rayon pour un nouveau livre. <br>
 A la création d'un nouveau livre : <br>
- . Si un autre document existe déjà avec le même numéro : une fenêtre apparaît indiquant l'erreur et son motif, et l'ajout est annulé. <br>
- . Sinon : le nouveau livre est ajouté dans la liste, après confirmation par un message d'alerte. <br><br>
+- Si un autre document existe déjà avec le même numéro : une fenêtre apparaît indiquant l'erreur et son motif, et l'ajout est annulé. <br>
+- Sinon : le nouveau livre est ajouté dans la liste, après confirmation par un message d'alerte. <br><br>
 
 Lors de la création d'un nouveau livre, on peut soit "Valider", soit "Annuler" l'ajout, ce qui renvoit aux actions correspondantes. 
 
 #### Modification d'un livre
 Il est possible, après avoir sélectionné un livre dans la liste, et cliqué sur le bouton "Modifier", de modifier un livre existant. Pour cela, le formulaire est automatiquement adapté, pour permettre la modification de toutes les informations disponibles sur le document. Les zones de textes et combo sont donc tous remplis avec les informations existantes sur le livre donné. <br>
 A la modification d'un nouveau livre : <br>
- . Si la modification porte sur le numéro, et que le nouveau numéro renseigné est déjà associé à un autre document : une fenêtre apparaît indiquant l'erreur et son motif, et l'ajout est annulé<br>
- . Sinon : la modification du livre apparaît dans la liste, après confirmation par un message d'alerte. <br><br>
+- Si la modification porte sur le numéro, et que le nouveau numéro renseigné est déjà associé à un autre document : une fenêtre apparaît indiquant l'erreur et son motif, et l'ajout est annulé<br>
+- Sinon : la modification du livre apparaît dans la liste, après confirmation par un message d'alerte. <br><br>
 
 Lors de la modification d'un livre existant, on peut soit "Valider", soit "Annuler" la modification, ce qui renvoit aux actions correspondantes.
 
@@ -47,8 +47,8 @@ La suppression est possible uniquement si le document que l'on souhaite supprime
 
 #### Modification de l'état d'un exemplaire
 Au-dessous de la zone contenant les informations détaillées d'un livre, on trouve deux zones : <br>
- . Un tableau contenant la liste des exemplaires rattachés au livre sélectionné plus haut <br>
- . Une zone permettant la modification de l'état de l'exemplaire, ou la suppression de l'exemplaire. <br><br>
+- Un tableau contenant la liste des exemplaires rattachés au livre sélectionné plus haut <br>
+- Une zone permettant la modification de l'état de l'exemplaire, ou la suppression de l'exemplaire. <br><br>
 
 Il est donc possible, après avoir sélectionné un exemplaire de livre dans la liste, de modifier son état parmi les 4 existants : "neuf", "usagé", "détérioré", "inutilisable", grâce à un combo rempli par défaut avec les états disponibles. Une fois le nouvel état sélectionné dans la liste, en cliquant sur le bouton "Modifier l'état de l'exemplaire", la modification apparaît dans la liste en bas à gauche de la fenêtre. 
 
@@ -61,11 +61,11 @@ Il est possible, après avoir sélectionné un exemplaire de livre dans la liste
 Cet onglet présente la liste des DVD avec les informations détaillées et les exemplaires associés. Les fonctionnalités existantes sont détaillées dans le readme du dépôt d'origine. <br><br>
 
 Les fonctionnalités ajoutées au niveau de cet onglet sont les mêmes que pour l'onglet de gestion des livres. Leur fonctionnement est donc identique à l'onglet des livres. <br>
- . Ajout d'un DVD <br>
- . Modification d'un DVD <br>
- . Suppression d'un DVD <br>
- . Modification de l'état de l'exemplaire d'un DVD <br>
- . Suppression d'un exemplaire de DVD <br><br>
+- Ajout d'un DVD <br>
+- Modification d'un DVD <br>
+- Suppression d'un DVD <br>
+- Modification de l'état de l'exemplaire d'un DVD <br>
+- Suppression d'un exemplaire de DVD <br><br>
 
 La seule différence réside dans certaines informations détaillées, spécifiques aux DVD : durée (à la place de ISBN), réalisateur (à la place de l'auteur), synopsis (à la place de collection). <br>
 
@@ -75,9 +75,9 @@ La seule différence réside dans certaines informations détaillées, spécifiq
 Cet onglet présente la liste des revues avec les informations détaillées. Les fonctionnalités existantes sont détaillées dans le readme du dépôt d'origine. <br><br>
 
 Les fonctionnalités ajoutées au niveau de cet onglet sont en partie les mêmes que pour l'onglet de gestion des livres : <br>
- . Ajout d'une revue <br>
- . Modification d'une revue <br>
- . Suppression d'une revue <br>
+- Ajout d'une revue <br>
+- Modification d'une revue <br>
+- Suppression d'une revue <br>
 La gestion des exemplaires de revue sera géré dans l'onglet 4 : Parution des revues. <br><br>
 
 La seule différence réside dans certaines informations détaillées, spécifiques aux revues : périodicité (à la place de l'auteur), délai mise à dispo (à la place de collection). <br>
@@ -88,8 +88,8 @@ La seule différence réside dans certaines informations détaillées, spécifiq
 Cet onglet permet d'enregistrer la réception de nouvelles parutions d'une revue. Les fonctionnalités existantes sont détaillées dans le readme du dépôt d'origine. <br><br>
 
 Au-dessous de la partie "Nouvelle parution réceptionnée pour cette revue", est ajoutée la zone "Informations sur l'exemplaire", permettant d'intégrer les deux fonctionnalités, identiques à l'onglet de gestion des livres : <br>
- . Modification de l'état d'un exemplaire <br>
- . Suppression d'un exemplaire<br><br>
+- Modification de l'état d'un exemplaire <br>
+- Suppression d'un exemplaire<br><br>
 
 La seule différence réside dans l'affichage de la zone et la présentation de la fenêtre. <br>
 
@@ -111,8 +111,8 @@ Le fait de cliquer sur le titre d'une des colonnes de la liste des commandes de 
 #### Ajout d'une commande 
 Il est possible, en cliquant sur le bouton "Ajouter une commande", de commander un ou plusieurs exemplaires du livre choisi. En cliquant sur le bouton les informations détaillées sur la commandes sont vidées, et sont rendues accessibles, pour permettre de renseigner de nouvelles informations : numéro de commande, montant, nombre d'exemplaire(s) et date de la commande. <br>
 A la création de la commande : <br>
- . Si une autre commande existe déjà avec le même numéro : une fenêtre apparaît indiquant l'erreur et son motif, et l'ajout est annulé <br>
- . Sinon : la nouvelle commande est ajoutée dans la liste, après confirmation par un message d'alerte. <br><br>
+- Si une autre commande existe déjà avec le même numéro : une fenêtre apparaît indiquant l'erreur et son motif, et l'ajout est annulé <br>
+- Sinon : la nouvelle commande est ajoutée dans la liste, après confirmation par un message d'alerte. <br><br>
 
 Lors de la création d'une commande, on peut soit "Valider", soit "Annuler" l'ajout, ce qui renvoit aux actions correspondantes. 
 
@@ -123,10 +123,10 @@ La suppression est possible uniquement si la commande que l'on souhaite supprime
 
 #### Modification du stade de la commande
 Il est possible, après avoir sélectionné une commande dans la liste, de modifier son suivi (sauf si l'étape de suivi est déjà "livrée") grâce à un combo pré-rempli. Il est alors possible de gérer le suivi de la façon suivante : <br>
- . Une commande "en cours" peut passer aux stades "livrée" et "relancée"<br>
- . Une commande "livrée" peut passer au stade "réglée" <br>
- . Une commande "relancée" peut passer aux stades "en cours" ou "livrée". <br>
- . Une commande "réglée" ne peut pas revenir à un autre stade. <br><br>
+- Une commande "en cours" peut passer aux stades "livrée" et "relancée"<br>
+- Une commande "livrée" peut passer au stade "réglée" <br>
+- Une commande "relancée" peut passer aux stades "en cours" ou "livrée". <br>
+- Une commande "réglée" ne peut pas revenir à un autre stade. <br><br>
 
 Si une commande passe au stade "livrée", alors le nombre d'exemplaire(s) correspondant à la commande est généré dans la base de données. <br>
 
@@ -138,12 +138,12 @@ Lors de la modification du stade de la commande, on peut soit "Modifier l'étape
 Cet onglet permet de gérer les commandes de dvd. Il se décompose en plusieurs parties, correspondants à des fonctionnalités. <br><br>
 
 Le fonctionnement de cet onglet est identique à celui de la gestion des commandes de livres : <br>
- . Sélection du dvd<br>
- . Affichage des informations détaillées du dvd<br>
- . Affichage des commandes de dvd<br>
- . Ajout d'une commande de dvd<br>
- . Suppression d'une commande de dvd<br>
- . Modification du stade de la commande <br><br>
+- Sélection du dvd<br>
+- Affichage des informations détaillées du dvd<br>
+- Affichage des commandes de dvd<br>
+- Ajout d'une commande de dvd<br>
+- Suppression d'une commande de dvd<br>
+- Modification du stade de la commande <br><br>
 
 La seule différence réside dans les informations détaillées, qui sont ici spécifiques aux DVD. <br>
 
@@ -153,15 +153,15 @@ La seule différence réside dans les informations détaillées, qui sont ici sp
 Cet onglet permet de gérer les commandes de revues (correspondant cette fois-ci à un abonnement ou un renouvellement d'abonnement). Il se décompose en plusieurs parties, correspondants à des fonctionnalités.<br><br>
 
 Le fonctionnement de certaines fonctionnalités est identique à celui de la gestion des commandes de livres : <br>
- . Sélection de la revue <br>
- . Affichage des informations détaillées de la revue <br>
- . Affichage des commandes de revues <br>
- . Ajout d'une commande de revue <br>
- . Suppression d'une commande de revue <br><br>
+- Sélection de la revue <br>
+- Affichage des informations détaillées de la revue <br>
+- Affichage des commandes de revues <br>
+- Ajout d'une commande de revue <br>
+- Suppression d'une commande de revue <br><br>
 
 Les seules différences résident dans : <br>
-	- Les informations détaillées, qui sont ici spécifiques aux revues <br>
-	- Les informations sur une commande : date de fin d'abonnement (au lieu du nombre d'exemplaires), et il n'y a ici pas de gestion du suivi de la commande. <br><br>
+- Les informations détaillées, qui sont ici spécifiques aux revues <br>
+- Les informations sur une commande : date de fin d'abonnement (au lieu du nombre d'exemplaires), et il n'y a ici pas de gestion du suivi de la commande. <br><br>
 
 Cet onglet permet aussi la création d'une fenêtre d'alerte au lancement de l'application, rappelant à l'utilisateur les abonnements qui arrivent à expiration dans moins de 30 jours. <br>
 
