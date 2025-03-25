@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1def6c56-175b-4590-9da2-7c0d1383e6c1)<img width="385" alt="image" src="https://github.com/user-attachments/assets/69a8e525-a46b-4fb1-b6a4-35aca34a0a8c" />![image](https://github.com/user-attachments/assets/fcf5fede-c6ca-4f2f-bb9e-fb849a3eeb9a)# MediatekDocuments
+# MediatekDocuments
 Cette application permet de gérer les documents (livres, DVD, revues) d'une médiathèque, les commandes, ainsi que les exemplaires associés à chaque document. Elle a été codée en C# sous Visual Studio 2019. C'est une application de bureau, prévue pour être installée sur plusieurs postes, accédant à la même base de données. 
 L'application exploite une API REST pour accéder à la BDD MySQL. Des explications sont données plus loin, ainsi que le mode opératoire pour installer et utiliser l'application en local. <br><br>
 
