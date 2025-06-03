@@ -23,7 +23,7 @@ namespace MediaTekDocuments.model
         /// <param name="id">id de l'abonnement</param>
         /// <param name="dateCommande">date de la commande</param>
         /// <param name="montant">montant de la commande</param>
-        /// <param name="dateFinAbonnement">date de fin d'abonnement</param>
+        /// <param name="dateFinAbonnement">date de fin de l'abonnement</param>
         /// <param name="idRevue">id de la revue concernée</param>
         /// <param name="titre">titre de la revue concernée</param>
         public Abonnement(string id, DateTime dateCommande, double montant, DateTime dateFinAbonnement, string idRevue, string titre)
